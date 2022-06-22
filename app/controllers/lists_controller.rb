@@ -1,7 +1,7 @@
 class ListsController < ApplicationController
 
   def index
-    @list = List.all
+    @lists = List.all
   end
 
   def show
@@ -28,7 +28,7 @@ class ListsController < ApplicationController
   def update
      @list = List.find(params[:id])
     if @list.update(list_params)
-      redirect_to list_path(list.id)
+      redirect_to list_path(@list.id)
     else
       render :edit
     end

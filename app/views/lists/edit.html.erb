@@ -1,0 +1,9 @@
+  <h1>編集</h1>
+  <%= form_with model:@list, url: list_path(@list), method: :patch, local:true do |f| %>
+    <h4>タイトル</h4>
+    <%= f.text_field :title %>
+    <h4>本文</h4>
+    <%= f.text_area :body %>
+    <%= f.submit '保存' %>
+    <%= link_to "削除", list_path(@list.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
+  <% end %>

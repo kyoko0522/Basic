@@ -1,0 +1,16 @@
+<h1>投稿一覧</h1>
+<p>タイトル</p>
+<% @lists.each do |list| %>
+<table>
+  <tr>
+    <th><%=link_to list.title,list_path(list.id) %></th>
+    <th><%=link_to "編集",edit_list_path(list.id) %></th>
+    <th><%= link_to "削除", list_path(list.id), method: :delete, "data-confirm" => "本当に削除しますか？" %></th>
+  <% end %>
+  </tr>
+</table>
+<table>
+  <tr>
+    <th><%=link_to "新規投稿",new_list_path %></th>
+  </tr>
+</table>
